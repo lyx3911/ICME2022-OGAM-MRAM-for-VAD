@@ -1,0 +1,21 @@
+dataset_path: ../VAD_datasets/
+train_dataset_type: ped2
+train_dataset_args: {augment: aug1, h: 256, w: 256, c: 3, t_length: 5, batch_size: 1, num_workers: 0}
+test_dataset_type: ped2
+test_dataset_args: {augment: aug1, h: 256, w: 256, c: 3, t_length: 5, batch_size: 1, num_workers: 0}
+
+label_path: ./data/ped2_frame_labels.mat
+
+train_bboxes_path: ./bboxes/ped2/train
+test_bboxes_path: ./bboxes/ped2/test
+train_flow_path: ./flow/ped2/train
+test_flow_path: ./flow/ped2/test
+
+save_path: ./save/ped2
+
+optimizer: Adam
+optimizer_args: {lr: 0.0002, weight_decay: 0, lr_scheduler: CosineAnnealingLR, T_max: 100}
+
+epochs: 100
+
+save_epoch: 5
